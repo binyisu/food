@@ -1,0 +1,71 @@
+_BASE_: "../Base-RCNN.yaml"
+MODEL:
+  WEIGHTS: "output/voc10-5-5/food_r50_voc_base/model_reset_remove.pth"
+  MASK_ON: False
+  BACKBONE:
+    FREEZE: False
+  RESNETS:
+    DEPTH: 50
+  RPN:
+    ENABLE_DECOUPLE: True
+    BACKWARD_SCALE: 0.0
+    FREEZE: False
+  ROI_HEADS:
+    NAME: "Res5ROIHeads"
+    ENABLE_DECOUPLE: True
+    BACKWARD_SCALE: 0.001
+    NUM_CLASSES: 21
+    NUM_KNOWN_CLASSES: 15
+    NUM_BASE_CLASSES: 10
+    FREEZE_FEAT: True
+    CLS_DROPOUT: True
+#    VIS_IOU_THRESH: 0.5
+#    NMS_THRESH_TEST: 0.5
+  ROI_BOX_HEAD:
+#    NAME: "FastRCNNSeparateConvFCHead"
+    OUTPUT_LAYERS: "FOODFastRCNNOutputLayers"
+    CLS_AGNOSTIC_BBOX_REG: True
+INPUT:
+  MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
+  MIN_SIZE_TEST: 800
+DATASETS:
+  TRAIN: ("voc_2007_trainval_all1_1shot_seed8", )
+# 3, 5 6,8,
+  TEST: ('voc_2007_test_all1',)
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.01
+  STEPS: (3200,)
+  MAX_ITER: 4000
+  CHECKPOINT_PERIOD: 100000
+  WARMUP_ITERS: 0
+UPLOSS:
+  ENABLE_UPLOSS: True
+  START_ITER: 0
+  SAMPLING_METRIC: "edl_dirichlet"
+  TOPK: 3
+  SAMPLING_RATIO: 1
+  ALPHA: 1.0
+  WEIGHT: 1.0
+ELOSS:
+  ENABLE_ELOSS: False
+  WEIGHT: 0.1
+HSICLOSS:
+  ENABLE_HSICLOSS: True
+ICLOSS:
+  OUT_DIM: 2048
+  QUEUE_SIZE: 32
+  IN_QUEUE_SIZE: 16
+  BATCH_IOU_THRESH: 0.5
+  QUEUE_IOU_THRESH: 0.7
+  TEMPERATURE: 0.1
+  WEIGHT: 0.1
+TEST:
+  PCB_ENABLE: False
+  PCB_MODELPATH: "ImageNetPretrained/torchvision/resnet101-5d3b4d8f.pth"
+  IMG_OUTPUT_PATH: "/home/subinyi/Users/FSOSOD/DeFRCN-main/save_fig/voc/"
+  SAVE_FIG: False
+  SCORE_THREHOLD: 0.3
+  SAVE_FEATURE_MAP: False
+
+OUTPUT_DIR: "output/voc10-5-5/HMWA_2/10shot_seed1"

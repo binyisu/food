@@ -1,0 +1,64 @@
+_BASE_: "../Base-RCNN.yaml"
+MODEL:
+  WEIGHTS: "output/voc_coco/food_r50_voc_coco_base/model_reset_remove.pth"
+  MASK_ON: False
+  BACKBONE:
+    FREEZE: False
+  RESNETS:
+    DEPTH: 50
+  RPN:
+    ENABLE_DECOUPLE: True
+    BACKWARD_SCALE: 0.0
+    FREEZE: False
+  ROI_HEADS:
+    NUM_CLASSES: 81
+    NUM_KNOWN_CLASSES: 40
+    NUM_BASE_CLASSES: 20
+    FREEZE_FEAT: True
+    CLS_DROPOUT: True
+    ENABLE_DECOUPLE: True
+    BACKWARD_SCALE: 0.001
+  ROI_BOX_HEAD:
+    #    NAME: "FastRCNNSeparateConvFCHead"
+    OUTPUT_LAYERS: "FOODFastRCNNOutputLayers"
+    CLS_AGNOSTIC_BBOX_REG: True
+DATASETS:
+  TRAIN: ("voc_coco_trainval_all_1shot_seed7", )
+  TEST: ('voc_coco_test',)
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.01
+  STEPS: (2000,)
+  MAX_ITER: 2400
+  CHECKPOINT_PERIOD: 100000
+  WARMUP_ITERS: 0
+UPLOSS:
+  ENABLE_UPLOSS: True
+  START_ITER: 0
+  SAMPLING_METRIC: "edl_dirichlet"
+  TOPK: 5
+  SAMPLING_RATIO: 1
+  ALPHA: 1.0
+  WEIGHT: 1.0
+ELOSS:
+  ENABLE_ELOSS: False
+  WEIGHT: 0.1
+HSICLOSS:
+  ENABLE_HSICLOSS: True
+ICLOSS:
+  OUT_DIM: 2048
+  QUEUE_SIZE: 32
+  IN_QUEUE_SIZE: 16
+  BATCH_IOU_THRESH: 0.5
+  QUEUE_IOU_THRESH: 0.7
+  TEMPERATURE: 0.1
+  WEIGHT: 0.1
+TEST:
+  PCB_ENABLE: False
+  PCB_MODELPATH: "ImageNetPretrained/torchvision/resnet101-5d3b4d8f.pth"
+  IMG_OUTPUT_PATH: "/home/subinyi/Users/DeFRCN-main/save_img/"
+  SAVE_FIG: True
+  SCORE_THREHOLD: 0.3
+  SAVE_FEATURE_MAP: False
+
+OUTPUT_DIR: "output/voc_coco/HMWA_2/5shot_seed1"

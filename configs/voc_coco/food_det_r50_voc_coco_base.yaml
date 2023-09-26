@@ -1,0 +1,52 @@
+_BASE_: "../Base-RCNN.yaml"
+MODEL:
+  WEIGHTS: "ImageNetPretrained/MSRA/R-50.pkl"
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+  RPN:
+    ENABLE_DECOUPLE: True
+    BACKWARD_SCALE: 0.0
+  ROI_HEADS:
+    NAME: "Res5ROIHeads"
+    NUM_CLASSES: 81
+    NUM_KNOWN_CLASSES: 20
+    NUM_BASE_CLASSES: 20
+    ENABLE_DECOUPLE: True
+    BACKWARD_SCALE: 0.75
+  ROI_BOX_HEAD:
+    #    NAME: "FastRCNNSeparateConvFCHead"
+    OUTPUT_LAYERS: "FOODFastRCNNOutputLayers"
+    CLS_AGNOSTIC_BBOX_REG: True
+DATASETS:
+  TRAIN: ('voc_2007_trainval', 'voc_2012_trainval', 'voc_2007_test')
+  TEST: ('voc_coco_test',)
+SOLVER:
+  IMS_PER_BATCH: 4
+  STEPS: (31000, 39000)
+  MAX_ITER: 52000
+  CHECKPOINT_PERIOD: 200000
+  WARMUP_ITERS: 100
+  BASE_LR: 0.02
+UPLOSS:
+  ENABLE_UPLOSS: False
+  START_ITER: 0
+  SAMPLING_METRIC: "edl_dirichlet"
+  TOPK: 3
+  SAMPLING_RATIO: 1
+  ALPHA: 1.0
+  WEIGHT: 1.0
+ELOSS:
+  ENABLE_ELOSS: False
+  WEIGHT: 0.1
+HSICLOSS:
+  ENABLE_HSICLOSS: False
+ICLOSS:
+  OUT_DIM: 2048
+  QUEUE_SIZE: 32
+  IN_QUEUE_SIZE: 16
+  BATCH_IOU_THRESH: 0.5
+  QUEUE_IOU_THRESH: 0.7
+  TEMPERATURE: 0.1
+  WEIGHT: 0.1
+OUTPUT_DIR: "output/voc_coco/food_r50_voc_coco_base"

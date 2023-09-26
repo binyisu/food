@@ -1,0 +1,1 @@
+from .config import add_food_config

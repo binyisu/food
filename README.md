@@ -54,7 +54,18 @@ Then we generate all datasets for FOOD:
 ```
 bash prepare_food_voc_coco.sh
 ```
+### Citation
 
-Binyi Su, Hua Zhang, and Zhong Zhou. 2023.HSIC-based Moving WeightAveraging for Few-Shot Open-Set Object Detection. In Proceedings of the31st ACM International Conference on Multimedia (MM 23), October 29.November 3, 2023, Ottawa, ON Canada. ACM, New York, NY,USA, 13 pages.https://doi.org/10.1145/3581783.3611850
+If you find this repo useful, please consider citing our paper:
+
+```
+@inproceedings{zhong2022regionclip,
+  title={HSIC-based Moving WeightAveraging for Few-Shot Open-Set Object Detection},
+  author={Binyi Su, Hua Zhang, and Zhong Zhou},
+  booktitle={Proceedings of the31st ACM International Conference on Multimedia (MM 23)},
+  year={2023}
+  doi={https://doi.org/10.1145/3581783.3611850}
+}
+```
 
 

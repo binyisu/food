@@ -13,8 +13,6 @@ The code is based on detectron2 v0.3
 ```
 conda create -n Food python=3.8 -y
 conda activate Food
-
-
 ```
 
 - **Prepare datasets**

@@ -60,15 +60,20 @@ Then we generate all datasets for FOOD:
 ```
 bash prepare_food_voc_coco.sh
 ```
+
 ## Training and Evaluation
 
-### VOC-COCO dataset settings:
+#### VOC-COCO dataset settings:
 
-bash voc-coco.sh
+```
+bash run_voc_coco_AR.sh
+```
 
-### VOC10-5-5 dataset settings:
+#### VOC10-5-5 dataset settings:
 
-bash voc10-5-5.sh
+```
+bash run_voc_AR.sh
+```
 
 ### Citation
 

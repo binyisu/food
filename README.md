@@ -2,7 +2,7 @@
 
 This is the official PyTorch implementation of Foodv2 (ACM MM 2023).
 
-[**Paper**](https://www.researchgate.net/publication/373451611_HSIC-based_Moving_Weight_Averaging_for_Few-Shot_Open-Set_Object_Detection) [**Code**](https://github.com/binyisu/food)
+[**Paper**](https://www.researchgate.net/publication/373451611_HSIC-based_Moving_Weight_Averaging_for_Few-Shot_Open-Set_Object_Detection)    [**Code**](https://github.com/binyisu/food)
 
 ## Setup
 

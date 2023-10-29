@@ -84,7 +84,8 @@ If you find this repo useful, please consider citing our paper:
   title={HSIC-based Moving WeightAveraging for Few-Shot Open-Set Object Detection},
   author={Binyi Su, Hua Zhang, and Zhong Zhou},
   booktitle={Proceedings of the31st ACM International Conference on Multimedia (MM 23)},
-  year={2023}
+  page={5358--5369},
+  year={2023},
   doi={https://doi.org/10.1145/3581783.3611850}
 }
 ```

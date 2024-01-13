@@ -81,7 +81,7 @@ If you find this repo useful, please consider citing our paper:
 
 ```
 @inproceedings{foodv2,
-  title={HSIC-based Moving WeightAveraging for Few-Shot Open-Set Object Detection},
+  title={HSIC-based Moving Weight Averaging for Few-Shot Open-Set Object Detection},
   author={Binyi Su, Hua Zhang, and Zhong Zhou},
   booktitle={Proceedings of the31st ACM International Conference on Multimedia (MM 23)},
   page={5358--5369},

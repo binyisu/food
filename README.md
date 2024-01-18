@@ -1,6 +1,8 @@
 # HSIC-based Moving WeightAveraging for Few-Shot Open-Set Object Detection
 
-This is the official PyTorch implementation of Foodv2 (ACM MM 2023).
+# News
+[2024-01-18]：This is the official PyTorch implementation of Foodv1 and Foodv2.
+
 
 [**Paper**](https://www.researchgate.net/publication/373451611_HSIC-based_Moving_Weight_Averaging_for_Few-Shot_Open-Set_Object_Detection)         [**Code**](https://github.com/binyisu/food)
 

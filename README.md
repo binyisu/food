@@ -91,7 +91,7 @@ If you find this repo useful, please consider citing our paper:
   doi={https://doi.org/10.1145/3581783.3611850}
 }
 
-@ARTICLE{10438382,
+@ARTICLE{foodv1,
   author={Binyi Su, Hua Zhang, Jingzhi Li, Zhong Zhou},
   journal={IEEE Transactions on Image Processing}, 
   title={Toward Generalized Few-Shot Open-Set Object Detection}, 

@@ -92,7 +92,7 @@ If you find this repo useful, please consider citing our paper:
 }
 
 @ARTICLE{10438382,
-  author={Su, Binyi and Zhang, Hua and Li, Jingzhi and Zhou, Zhong},
+  author={Binyi Su, Hua Zhang, Jingzhi Li, Zhong Zhou},
   journal={IEEE Transactions on Image Processing}, 
   title={Toward Generalized Few-Shot Open-Set Object Detection}, 
   year={2024},

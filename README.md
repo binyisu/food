@@ -91,12 +91,15 @@ If you find this repo useful, please consider citing our paper:
   doi={https://doi.org/10.1145/3581783.3611850}
 }
 
-@article{su2022towards,
-  title={Towards Few-Shot Open-Set Object Detection},
+@ARTICLE{10438382,
   author={Su, Binyi and Zhang, Hua and Li, Jingzhi and Zhou, Zhong},
-  journal={arXiv preprint arXiv:2210.15996},
-  year={2022}
-}
+  journal={IEEE Transactions on Image Processing}, 
+  title={Toward Generalized Few-Shot Open-Set Object Detection}, 
+  year={2024},
+  volume={33},
+  number={},
+  pages={1389-1402},
+  doi={10.1109/TIP.2024.3364495}}
 ```
 
 
